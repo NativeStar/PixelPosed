@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">PixelPosed</string>
+    <string name="xposed_desc">无限试用Pixel客户端7天热度排序</string>
+</resources>
