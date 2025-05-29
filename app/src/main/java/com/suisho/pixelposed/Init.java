@@ -18,7 +18,16 @@ public class Init implements IXposedHookLoadPackage{
             XposedBridge.log("Wrong package:"+lpparam.packageName);
             return;
         }
-        Class<?> activityClass=XposedHelpers.findClass("jp.pxv.android.activity.RoutingActivity",lpparam.classLoader);
+        Class<?> activityClass;
+        try{
+            activityClass=XposedHelpers.findClass("jp.pxv.android.activity.RoutingActivity",lpparam.classLoader);
+        }catch (XposedHelpers.ClassNotFoundError classNotFoundError){
+            try{
+                activityClass=XposedHelpers.findClass("jp.pxv.android.feature.routing.main.RoutingActivity",lpparam.classLoader);
+            }catch (XposedHelpers.ClassNotFoundError e){
+                return;
+            }
+        }
         XposedHelpers.findAndHookMethod(activityClass, "onCreate", Bundle.class, new XC_MethodHook() {
             @Override
             protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
