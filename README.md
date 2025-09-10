@@ -1,3 +1,8 @@
+**[HookVip](https://github.com/Xposed-Modules-Repo/top.hookvip.pro)实现了对Pixel的真正破解 该模块基本没必要维护了**
+
+---
+
+
 无限续命安卓Pixel客户端搜索结果热度排序7天试用的Xposed模块
 
 (正常情况下 这是个会员功能 但安装客户端后会开放7天试用)
